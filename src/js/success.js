@@ -1,7 +1,7 @@
-import { loadHeaderFooter, getParams } from "./utils.mjs";
+import { loadHeaderFooter } from "./utils.mjs";
 
-const orderId = getParams("orderId");
+// const orderId = getParams("orderId");
 
-document.querySelector(".orderNumber").innerHTML = orderId;
+// document.querySelector(".orderNumber").innerHTML = orderId;
 
 loadHeaderFooter();

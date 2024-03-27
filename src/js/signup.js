@@ -30,6 +30,5 @@ document.getElementById("signupForm").addEventListener("submit", async (e) => {
       throw new Error("Failed to create user");
     }
   } catch (error) {
-    alert("Failed to create user. Please try again.");
   }
 });

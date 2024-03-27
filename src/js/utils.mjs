@@ -1,10 +1,6 @@
 // utils.mjs
 
-import Alert from "./alert.mjs";
-
-const alert = new Alert();
-
-export function qs(selector, parent = document) {
+export function getElementByQuerySelector(selector, parent = document) {
   return parent.querySelector(selector);
 }
 
@@ -16,19 +12,10 @@ export function setLocalStorage(key, data) {
   localStorage.setItem(key, JSON.stringify(data));
 }
 
-export function setClick(selector, callback) {
-  qs(selector).addEventListener("touchend", (event) => {
-    event.preventDefault();
-    callback();
-  });
-  qs(selector).addEventListener("click", callback);
-}
-
-export function getParams(param) {
+export function getRecipeId() {
   const queryString = window.location.search;
-  const urlParams = new URLSearchParams(queryString);
-  const product = urlParams.get(param);
-  return product;
+  const id = queryString.split("=")[1]
+  return id;
 }
 
 export function renderListWithTemplate(
@@ -64,56 +51,26 @@ export const loadHeaderFooter = async () => {
   let parentFooter = document.querySelector("footer");
   renderWithTemplate(header, parentHeader);
   renderWithTemplate(footer, parentFooter);
-  updateCartBadge();
+  updateListBadge();
 };
 
-export function updateCartBadge() {
-  const cartItems = JSON.parse(localStorage.getItem("so-cart"));
-  let cartCount = 0;
-  if (cartItems) {
-    cartCount = cartItems.reduce(
-      (acumulator, item) => acumulator + item.qty,
-      0,
-    );
+export function updateListBadge() {
+  const listItems = JSON.parse(localStorage.getItem("recipe-list"));
+  let listCount = 0;
+  if (listItems) {
+    listCount = listItems.length;
   }
-  document.querySelector(".cart-count").innerHTML = cartCount;
-}
-
-export function zoomAnimation() {
-  const icon = document.querySelector("#cartIconSvg");
-  icon.style.transform = "scale(1.3)";
-  setTimeout(() => {
-    icon.style.transform = "scale(1)";
-  }, 200);
-}
-
-export function removeItemFromCart(productId) {
-  let cartItems = getLocalStorage("so-cart") || [];
-  let item = cartItems.find((product) => product.Id === productId);
-  cartItems = cartItems.filter((product) => product.Id !== productId);
-  setLocalStorage("so-cart", cartItems); // Re-render the cart contents after removing the item
-  updateCartBadge();
-  alert.init();
-  alert.renderAlert(
-    "Removed",
-    `Removed ${item.qty} ${item.Name} from the cart.`,
-    "danger",
-  );
-}
-
-export function capitalize(text) {
-  return text[0].toUpperCase() + text.slice(1);
-}
-
-export function stringToDotNotation(object, textAttributes) {
-  const attributes = textAttributes.split(".");
-  let objs = object;
-  for (let attr of attributes) {
-    if (attr != "") {
-      objs = objs[attr];
-    }
+  const recipeListCount = document.querySelector(".recipe-list-count");
+  if (recipeListCount) {
+    recipeListCount.innerHTML = listCount;
   }
-  return objs;
+}
+
+export function removeItemFromList(removeid) {
+  let listItems = getLocalStorage("recipe-list") || [];
+  listItems = listItems.filter((id) => id !== removeid);
+  setLocalStorage("recipe-list", listItems);
+  updateListBadge();
 }
 
 export function formDataToJSON(formElement) {
