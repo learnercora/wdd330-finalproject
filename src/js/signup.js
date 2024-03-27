@@ -29,6 +29,5 @@ document.getElementById("signupForm").addEventListener("submit", async (e) => {
     } else {
       throw new Error("Failed to create user");
     }
-  } catch (error) {
-  }
+  } catch (error) {}
 });

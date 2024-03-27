@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300&family=Source+Sans+Pro:wght@900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@300&family=Source+Sans+Pro:wght@900&display=swap");
 
 /* :root {
   --primary-color: #011638   ;
@@ -45,7 +45,7 @@ header {
 }
 .list button {
   background-color: orange;
-  padding: .5rem;
+  padding: 0.5rem;
   border: none;
   border-radius: 20px;
 }
@@ -62,7 +62,7 @@ header {
 }
 
 footer {
-    padding: 1em;
+  padding: 1em;
 }
 a {
   text-decoration: none;
@@ -78,8 +78,8 @@ img {
 
 /* hero */
 .hero-image {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0)), 
-  url("/images/banner.png");
+  background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0)),
+    url("/images/banner.png");
   height: 50%;
   background-position: center;
   background-repeat: no-repeat;
@@ -92,7 +92,7 @@ img {
   transform: translate(0%, 15%);
   color: white;
   height: 15rem;
-  font-family: system-ui ;
+  font-family: system-ui;
 }
 .hero-text h1 {
   margin-bottom: 0.5rem;
@@ -140,7 +140,7 @@ img {
   border: solid black 1px;
   width: 90%;
   margin: 0 auto;
-  padding: .5rem;
+  padding: 0.5rem;
 }
 
 /*  */
@@ -150,10 +150,10 @@ img {
 .recipe-card {
   border: red solid 1px;
   width: 20rem;
-  margin: .5rem 1rem;
+  margin: 0.5rem 1rem;
   list-style-type: none;
 }
 /*  */
-.remove-item{
+.remove-item {
   background-color: red;
 }

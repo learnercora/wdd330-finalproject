@@ -1,10 +1,5 @@
-import {
-  getLocalStorage,
-  setLocalStorage,
-  updateListBadge,
-} from "./utils.mjs";
+import { getLocalStorage, setLocalStorage, updateListBadge } from "./utils.mjs";
 // import Carousel from "./carousel.mjs";
-
 
 function recipeContent(id, recipe) {
   return `
@@ -34,10 +29,10 @@ export default class recipeCardDetails {
   async init() {
     // this.recipeCard = await this.dataSource.showRecipeImageById(this.recipeId);
     this.recipeCard = {
-      url: "https://spoonacular.com/recipeCardImages/recipeCard-1711511413999.png", 
+      url: "https://spoonacular.com/recipeCardImages/recipeCard-1711511413999.png",
       status: "success",
-      time: "859ms"
-    }
+      time: "859ms",
+    };
     // console.log(this.recipeCard)
     this.renderRecipeCardDetails("main");
     document
@@ -47,14 +42,14 @@ export default class recipeCardDetails {
   }
   addTolist() {
     let listItems = getLocalStorage("recipe-list");
-    console.log(listItems)
+    console.log(listItems);
     if (!Array.isArray(listItems)) {
       listItems = [];
     }
-    if(!listItems.includes(this.recipeId)){
-      listItems.push(this.recipeId)
+    if (!listItems.includes(this.recipeId)) {
+      listItems.push(this.recipeId);
     }
-        
+
     // Add new item to cart
     setLocalStorage("recipe-list", listItems);
     updateListBadge();
@@ -62,7 +57,7 @@ export default class recipeCardDetails {
 
   renderRecipeCardDetails(element) {
     let container = document.querySelector(element);
-    let productForm = recipeContent(this.recipeId,this.recipeCard);
+    let productForm = recipeContent(this.recipeId, this.recipeCard);
     container.innerHTML = productForm;
   }
 }

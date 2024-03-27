@@ -36,12 +36,14 @@ export default class CollectedList {
     this.storedIdList = Array.isArray(items) ? items : [];
     this.getRecipeInfo(this.storedIdList);
   }
-  async getRecipeInfo(listItems){
+  async getRecipeInfo(listItems) {
     const dataSource = new ExternalApi();
-    this.collectedItems = await Promise.all(listItems.map(async (id)=>{
-      return await dataSource.getRecipeInfo(id)
-    }));
-    this.renderCollectedList()
+    this.collectedItems = await Promise.all(
+      listItems.map(async (id) => {
+        return await dataSource.getRecipeInfo(id);
+      }),
+    );
+    this.renderCollectedList();
   }
 
   renderCollectedList() {

@@ -14,7 +14,7 @@ export function setLocalStorage(key, data) {
 
 export function getRecipeId() {
   const queryString = window.location.search;
-  const id = queryString.split("=")[1]
+  const id = queryString.split("=")[1];
   return id;
 }
 

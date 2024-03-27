@@ -1,19 +1,18 @@
 @media screen and (min-width: 700px) {
-    /* .search-container input {
+  /* .search-container input {
         width: 40rem;
       } */
-    .hero-text {
-        height: 10rem;
-    }
-    .hero-image {
-        background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0)), 
-        url("/images/banner2.png");
-    }
-    .search-container input {
-        width: 40rem;
-    }
-    .recipe-detail {
-        width: 80%;
-    }
-
+  .hero-text {
+    height: 10rem;
+  }
+  .hero-image {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0)),
+      url("/images/banner2.png");
+  }
+  .search-container input {
+    width: 40rem;
+  }
+  .recipe-detail {
+    width: 80%;
+  }
 }
