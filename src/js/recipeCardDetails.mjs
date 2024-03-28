@@ -27,13 +27,7 @@ export default class recipeCardDetails {
     this.recipeCard = {};
   }
   async init() {
-    // this.recipeCard = await this.dataSource.showRecipeImageById(this.recipeId);
-    this.recipeCard = {
-      url: "https://spoonacular.com/recipeCardImages/recipeCard-1711511413999.png",
-      status: "success",
-      time: "859ms",
-    };
-    // console.log(this.recipeCard)
+    this.recipeCard = await this.dataSource.showRecipeImageById(this.recipeId);
     this.renderRecipeCardDetails("main");
     document
       .getElementById("addToList")
@@ -42,7 +36,6 @@ export default class recipeCardDetails {
   }
   addTolist() {
     let listItems = getLocalStorage("recipe-list");
-    console.log(listItems);
     if (!Array.isArray(listItems)) {
       listItems = [];
     }

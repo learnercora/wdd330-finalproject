@@ -1,22 +1,48 @@
+import { getLocalStorage, setLocalStorage } from "./utils.mjs";
+import SearchRecipelist from "./searchRecipeList";
+import ExternalApi from "./externalApi.mjs";
+import PageRef from "./pageRef";
+
 export default class SearchBar {
-  constructor() {}
+  constructor() {
+    this.query = getLocalStorage("query") || "";
+  }
   init() {
-    this.SearchBarListerner();
+    setLocalStorage("page-offset", 0);
+    this.searchBarListener();
+    if(this.query !== ""){
+        this.displaySearchList(this.query);
+        const pageRef = new PageRef();
+        pageRef.init();
+    }
   }
 
-  SearchBarListerner() {
-    document
-      .querySelector("#search-input")
-      .addEventListener("keypress", (e) => {
-        // e.preventDefault();
+  searchBarListener() {
+    document.querySelector("#search-input").addEventListener("keypress", (e) => {
         if (e.key == "Enter") {
-          console.log("input", e.target.value);
+            const value = e.target.value;
+            this.resetData(value);
+            this.displaySearchList(value);
         }
       });
     document.querySelector("#search-btn").addEventListener("click", (e) => {
-      // e.preventDefault();
-      const inputValue = e.target.closest("div").querySelector("input").value;
-      console.log("inputValue", inputValue);
+        const value = e.target.closest("div").querySelector("input").value;
+        this.resetData(value);
+        this.displaySearchList(value);
     });
   }
+  displaySearchList(query){
+    const searchRecipeListElement = document.querySelector(".search-recipe-list");
+    const dataSource = new ExternalApi(query);        
+    const searchRecipeList = new SearchRecipelist(dataSource, searchRecipeListElement);
+    searchRecipeList.init();
+  }
+  resetData(value){
+    setLocalStorage("query", value);
+    setLocalStorage("page-offset", 0);
+    const pageRef = new PageRef();
+    pageRef.init();
+  }
+  
+
 }

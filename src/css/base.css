@@ -144,8 +144,10 @@ img {
 }
 
 /*  */
-.recipe-list {
-  display: flex;
+.search-recipe-list,
+.collect-recipe-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
 }
 .recipe-card {
   border: red solid 1px;

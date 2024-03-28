@@ -15,4 +15,9 @@
   .recipe-detail {
     width: 80%;
   }
+  .search-recipe-list,
+  .collect-recipe-list {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+  }
 }

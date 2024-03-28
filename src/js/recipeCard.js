@@ -1,5 +1,5 @@
 import { getRecipeId, loadHeaderFooter } from "./utils.mjs";
-import ExternalApi from "./ExternalApi.mjs";
+import ExternalApi from "./externalApi.mjs";
 import recipeCardDetails from "./recipeCardDetails.mjs";
 
 loadHeaderFooter();

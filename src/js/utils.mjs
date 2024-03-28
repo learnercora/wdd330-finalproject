@@ -1,9 +1,5 @@
 // utils.mjs
 
-export function getElementByQuerySelector(selector, parent = document) {
-  return parent.querySelector(selector);
-}
-
 export function getLocalStorage(key) {
   return JSON.parse(localStorage.getItem(key));
 }

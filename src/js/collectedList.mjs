@@ -3,7 +3,7 @@ import {
   renderListWithTemplate,
   removeItemFromList,
 } from "./utils.mjs";
-import ExternalApi from "./ExternalApi.mjs";
+import ExternalApi from "./externalApi.mjs";
 
 function listItemTemplate(item) {
   const newItem = `
