@@ -33,5 +33,10 @@
     "last 3 opera versions",
     "last 3 ios_saf versions",
     "last 3 safari versions"
-  ]
+  ],
+  "vercel": {
+    "builds": [
+      { "src": "src/index.html", "use": "@vercel/static" }
+    ]
+  }
 }
