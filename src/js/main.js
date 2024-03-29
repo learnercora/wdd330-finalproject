@@ -1,6 +1,6 @@
 import { loadHeaderFooter, setLocalStorage } from "./utils.mjs";
-import SearchBar from "./searchBar";
-import PageRef from "./pageRef";
+import SearchBar from "./searchBar.mjs";
+// import PageRef from "./pageRef.mjs";
 
 loadHeaderFooter();
 

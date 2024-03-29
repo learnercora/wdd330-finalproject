@@ -1,6 +1,6 @@
 import ExternalApi from "./externalApi.mjs";
 import { getLocalStorage, setLocalStorage } from "./utils.mjs";
-import SearchBar from "./searchBar";
+import SearchBar from "./searchBar.mjs";
 
 export default class PageRef {
   constructor() {
