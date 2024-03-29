@@ -33,7 +33,7 @@ export default class SearchBar {
   }
   displaySearchList(query){
     const searchRecipeListElement = document.querySelector(".search-recipe-list");
-    const dataSource = new ExternalApi(query);        
+    const dataSource = new ExternalApi();        
     const searchRecipeList = new SearchRecipelist(dataSource, searchRecipeListElement);
     searchRecipeList.init();
   }

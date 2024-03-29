@@ -28,11 +28,14 @@ export default class recipeCardDetails {
   }
   async init() {
     this.recipeCard = await this.dataSource.showRecipeImageById(this.recipeId);
-    this.renderRecipeCardDetails("main");
-    document
-      .getElementById("addToList")
-      .addEventListener("click", this.addTolist.bind(this));
-    updateListBadge();
+    if (this.recipeCard) {
+      this.renderRecipeCardDetails("main");
+      document.getElementById("addToList").addEventListener("click", this.addTolist.bind(this));
+      updateListBadge();
+    } else {
+      history.back();
+    }
+    
   }
   addTolist() {
     let listItems = getLocalStorage("recipe-list");

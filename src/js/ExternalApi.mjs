@@ -13,7 +13,7 @@ async function convertToJson(res) {
 
 export default class ExternalApi {
   constructor(query) {
-    this.query = query;
+    this.query = getLocalStorage("query") || "";//query;
     this.number = 10;
     this.offset = getLocalStorage("page-offset") || 0;
     this.options = {
@@ -30,8 +30,13 @@ export default class ExternalApi {
       baseURL + `complexSearch?query=${this.query}&number=${this.number}&offset=${this.offset}`,
       this.options,
     );
-    const data = await convertToJson(response);
-    return data.results;
+    if (response.ok) {
+      const data = await convertToJson(response);
+      return data.results;
+    } else {
+      const data = await convertToJson(response);
+      alert(data.message || "There is somethings wrong from API...");
+    }
   }
   async showRecipeImageById(id) {
     const response = await fetch(baseURL + `${id}/card`, this.options);
@@ -39,6 +44,8 @@ export default class ExternalApi {
       const data = await response.json();
       return data;
     } else {
+      const data = await response.json();
+      alert(data.message || "There is somethings wrong from API...");
     }
   }
 
@@ -47,6 +54,9 @@ export default class ExternalApi {
     if (response.ok) {
       const data = await response.json();
       return data;
+    } else {
+      const data = await response.json();
+      alert(data.message || "There is somethings wrong from API...");
     }
   }
 }
