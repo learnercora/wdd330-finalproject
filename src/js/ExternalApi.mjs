@@ -12,8 +12,8 @@ async function convertToJson(res) {
 }
 
 export default class ExternalApi {
-  constructor(query) {
-    this.query = getLocalStorage("query") || "";//query;
+  constructor() {
+    this.query = getLocalStorage("query") || "";
     this.number = 10;
     this.offset = getLocalStorage("page-offset") || 0;
     this.options = {
