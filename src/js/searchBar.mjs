@@ -1,6 +1,6 @@
 import { getLocalStorage, setLocalStorage } from "./utils.mjs";
 import SearchRecipelist from "./searchRecipeList.mjs";
-import ExternalApi from "./externalApi.mjs";
+import ExternalApi from "./ExternalApi.mjs";
 import PageRef from "./pageRef.mjs";
 
 export default class SearchBar {

@@ -1,4 +1,3 @@
-import ExternalApi from "./externalApi.mjs";
 import { getLocalStorage, setLocalStorage } from "./utils.mjs";
 import SearchBar from "./searchBar.mjs";
 
