@@ -1,6 +1,7 @@
 // utils.mjs
 
 export function getLocalStorage(key) {
+  console.log(localStorage.getItem(key))
   return JSON.parse(localStorage.getItem(key));
 }
 
@@ -51,6 +52,7 @@ export const loadHeaderFooter = async () => {
 };
 
 export function updateListBadge() {
+  console.log(localStorage.getItem("recipe-list"))
   const listItems = JSON.parse(localStorage.getItem("recipe-list"));
   let listCount = 0;
   if (listItems) {
