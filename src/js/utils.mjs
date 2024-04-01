@@ -1,7 +1,6 @@
 // utils.mjs
 
 export function getLocalStorage(key) {
-  console.log(localStorage.getItem(key))
   return JSON.parse(localStorage.getItem(key));
 }
 
@@ -52,13 +51,12 @@ export const loadHeaderFooter = async () => {
 };
 
 export function updateListBadge() {
-  console.log(localStorage.getItem("recipe-list"))
-  const listItems = JSON.parse(localStorage.getItem("recipe-list"));
+  const recipeListCount = document.querySelector(".recipe-list-count");
   let listCount = 0;
-  if (listItems) {
+  if(localStorage.getItem("recipe-list")){
+    const listItems = JSON.parse(localStorage.getItem("recipe-list"));
     listCount = listItems.length;
   }
-  const recipeListCount = document.querySelector(".recipe-list-count");
   if (recipeListCount) {
     recipeListCount.innerHTML = listCount;
   }
