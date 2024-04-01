@@ -1,7 +1,4 @@
 @media screen and (min-width: 700px) {
-  /* .search-container input {
-        width: 40rem;
-      } */
   .hero-text {
     height: 10rem;
   }
@@ -17,7 +14,6 @@
   }
   .search-recipe-list,
   .collect-recipe-list {
-    display: grid;
     grid-template-columns: repeat(4, 1fr);
   }
 }

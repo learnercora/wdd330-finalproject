@@ -6,16 +6,18 @@ import {
 import ExternalApi from "./ExternalApi.mjs";
 
 function listItemTemplate(item) {
+  console.log(item)
   const newItem = `
   <li class="recipe-card">
     <img
       src="${item.image}"
-      alt="${item.Name}"
+      alt="${item.title}"
     />
+    <button class="remove-item" data-id="${item.id}">X</button>
     <a href="/recipe_page/?id=${item.id}" id=${item.id}>
       <h2 class="card__name">${item.title}</h2>
     </a>
-    <button class="remove-item" data-id="${item.id}">X</button>
+    
   </li>`;
 
   return newItem;

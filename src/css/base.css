@@ -32,7 +32,10 @@ header {
   grid-template-columns: 1fr 10rem;
   padding: 0px;
   margin: 1rem auto;
-  background-color: aquamarine;
+  background-color: crimson;
+}
+header a {
+  color: #fff;
 }
 /* css in header */
 .logo {
@@ -46,16 +49,15 @@ header {
 .list button {
   background-color: orange;
   padding: 0.5rem;
-  border: none;
   border-radius: 20px;
 }
 .recipe-list-count {
   content: attr(value);
   font-size: 15px;
   color: black;
-  background: red;
+  background: #fff;
   border-radius: 50%;
-  padding: 0 5px;
+  padding: 6px 10px;
   position: relative;
   left: -20px;
   top: -20px;
@@ -66,6 +68,7 @@ footer {
 }
 a {
   text-decoration: none;
+  color: darkblue;
 }
 img {
   width: 100%;
@@ -73,7 +76,7 @@ img {
 
 /* divider */
 .divider {
-  border-bottom: 2px solid orange;
+  border-bottom: 4px double darkblue;
 }
 
 /* hero */
@@ -147,15 +150,22 @@ img {
 .search-recipe-list,
 .collect-recipe-list {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(1, 1fr);
 }
 .recipe-card {
-  border: red solid 1px;
+  border: orange solid 3px;
   width: 20rem;
   margin: 0.5rem 1rem;
   list-style-type: none;
+  border-radius: 10px;
+  padding: 10px 0px;
 }
 /*  */
 .remove-item {
-  background-color: red;
+  background-color: #000;
+  border: none;
+  color: #fff;
+  font-weight: bolder;
+  border-radius: 15px;
+  padding: 3px 6px;
 }
