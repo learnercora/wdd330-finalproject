@@ -1,7 +1,6 @@
 import { getLocalStorage, setLocalStorage, updateListBadge } from "./utils.mjs";
 
 function recipeContent(id, recipe) {
-  console.log(recipe.url)
   return `
     <section class="recipe-detail">
       <div class="recipe-detail__btn">
@@ -29,12 +28,13 @@ export default class recipeCardDetails {
     this.recipeCard = await this.dataSource.showRecipeImageById(this.recipeId);
     if (this.recipeCard) {
       this.renderRecipeCardDetails("main");
-      document.getElementById("addToList").addEventListener("click", this.addTolist.bind(this));
+      document
+        .getElementById("addToList")
+        .addEventListener("click", this.addTolist.bind(this));
       updateListBadge();
     } else {
       history.back();
     }
-    
   }
   addTolist() {
     let listItems = getLocalStorage("recipe-list");

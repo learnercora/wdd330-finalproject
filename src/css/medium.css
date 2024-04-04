@@ -7,7 +7,7 @@
   .list {
     grid-column: 6/7;
   }
-  .search-container input{
+  .search-container input {
     width: 25rem;
   }
 }

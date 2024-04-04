@@ -1,4 +1,4 @@
-import { getLocalStorage, setLocalStorage } from "./utils.mjs";
+import { getLocalStorage } from "./utils.mjs";
 
 const baseURL = import.meta.env.VITE_SERVER_URL;
 
@@ -22,12 +22,13 @@ export default class ExternalApi {
         "x-api-key": "3a992bd79ba44ab7a11ad70f4052f61c",
         "Content-Type": "application/json",
       },
-    }
+    };
   }
 
   async getData() {
     const response = await fetch(
-      baseURL + `complexSearch?query=${this.query}&number=${this.number}&offset=${this.offset}`,
+      baseURL +
+        `complexSearch?query=${this.query}&number=${this.number}&offset=${this.offset}`,
       this.options,
     );
     if (response.ok) {

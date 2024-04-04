@@ -1,4 +1,4 @@
-import { getLocalStorage, getRecipeId, loadHeaderFooter } from "./utils.mjs";
+import { getRecipeId, loadHeaderFooter } from "./utils.mjs";
 import ExternalApi from "./ExternalApi.mjs";
 import recipeCardDetails from "./recipeCardDetails.mjs";
 

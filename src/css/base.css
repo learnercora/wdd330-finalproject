@@ -181,10 +181,10 @@ img {
   border: #fff 2px solid;
 }
 /* page ref */
-.page-ref > div{
-  padding: 0 .5rem;
+.page-ref > div {
+  padding: 0 0.5rem;
 }
-.page-ref > div:nth-child(2){
+.page-ref > div:nth-child(2) {
   display: inline-flex;
 }
 .page-ref .current-page {

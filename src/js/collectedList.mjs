@@ -41,7 +41,8 @@ export default class CollectedList {
     const dataSource = new ExternalApi();
     this.collectedItems = await Promise.all(
       listItems.map(async (id) => {
-        return await dataSource.getRecipeInfo(id);
+        const result = await dataSource.getRecipeInfo(id);
+        return result;
       }),
     );
     this.renderCollectedList();

@@ -1,4 +1,4 @@
-import { loadHeaderFooter, setLocalStorage } from "./utils.mjs";
+import { loadHeaderFooter } from "./utils.mjs";
 import SearchBar from "./searchBar.mjs";
 
 loadHeaderFooter();

@@ -12,7 +12,7 @@ export default class PageRef {
     this.pageRefListener();
     this.displayCurrentPage();
   }
-  createRef(){
+  createRef() {
     const pageRefElement = document.querySelector(".page-ref");
     pageRefElement.innerHTML = `
     <div>Total Data:<span class="total-data"></span></div>
@@ -35,19 +35,20 @@ export default class PageRef {
       this.changeCurrentPage(1);
     });
   }
-  pageChange(move){
+  pageChange(move) {
     this.offset += move;
-    setLocalStorage("page-offset", this.offset)
+    setLocalStorage("page-offset", this.offset);
     const searchBar = new SearchBar();
     searchBar.displaySearchList(getLocalStorage("query"));
     this.displayCurrentPage();
   }
-  displayCurrentPage(){
-    if(this.currentPage > 0) {
-      document.querySelector(".current-page").innerHTML = this.currentPage.toString();
+  displayCurrentPage() {
+    if (this.currentPage > 0) {
+      document.querySelector(".current-page").innerHTML =
+        this.currentPage.toString();
     }
   }
-  changeCurrentPage(move){
+  changeCurrentPage(move) {
     this.currentPage += move;
     this.currentPage < 1 ? 1 : this.currentPage;
     this.displayCurrentPage();

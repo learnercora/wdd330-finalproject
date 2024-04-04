@@ -51,7 +51,7 @@ export const loadHeaderFooter = async () => {
 export function updateListBadge() {
   const recipeListCount = document.querySelector(".recipe-list-count");
   let listCount = 0;
-  if(localStorage.getItem("recipe-list")){
+  if (localStorage.getItem("recipe-list")) {
     const listItems = JSON.parse(localStorage.getItem("recipe-list"));
     listCount = listItems.length;
   }
