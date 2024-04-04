@@ -29,9 +29,9 @@ body {
 header {
   padding: 1em;
   display: grid;
-  grid-template-columns: 1fr 10rem;
+  grid-template-columns: repeat(6, 1fr);
   padding: 0px;
-  margin: 1rem auto;
+  margin: 0 auto;
   background-color: crimson;
 }
 header a {
@@ -39,12 +39,12 @@ header a {
 }
 /* css in header */
 .logo {
-  grid-column: 1/2;
+  grid-column: 1/5;
 }
 .list {
   padding-top: 1.5em;
   position: relative;
-  grid-column: 2/3;
+  grid-column: 5/7;
 }
 .list button {
   background-color: orange;
@@ -68,7 +68,7 @@ footer {
 }
 a {
   text-decoration: none;
-  color: darkblue;
+  color: darkorange;
 }
 img {
   width: 100%;
@@ -116,14 +116,15 @@ img {
 
 /* search bar */
 .search-container {
-  margin: 3rem auto;
+  margin: 1rem auto;
   text-align: center;
   display: inline-flex;
 }
 .search-container input {
-  margin: auto;
+  /* margin: auto; */
+  margin: 0 0 0 -20px;
   padding: 0.5rem 1rem;
-  width: 22rem;
+  width: 20rem;
   height: 5rem;
   font-size: 1.5rem;
   border-radius: 40px;
@@ -142,7 +143,7 @@ img {
 .recipe-detail {
   border: solid black 1px;
   width: 90%;
-  margin: 0 auto;
+  margin: 1rem auto;
   padding: 0.5rem;
 }
 
@@ -151,21 +152,61 @@ img {
 .collect-recipe-list {
   display: grid;
   grid-template-columns: repeat(1, 1fr);
+  /* display: block; */
 }
 .recipe-card {
   border: orange solid 3px;
-  width: 20rem;
+  /* width: 20rem; */
   margin: 0.5rem 1rem;
   list-style-type: none;
   border-radius: 10px;
   padding: 10px 0px;
 }
+.recipe-card:hover,
+.recipe-card:hover a {
+  background-color: darkorange;
+  color: #fff;
+}
 /*  */
 .remove-item {
   background-color: #000;
-  border: none;
+  border: #000 2px solid;
   color: #fff;
   font-weight: bolder;
   border-radius: 15px;
   padding: 3px 6px;
+}
+.remove-item:hover {
+  background-color: red;
+  border: #fff 2px solid;
+}
+/* page ref */
+.page-ref > div{
+  padding: 0 .5rem;
+}
+.page-ref > div:nth-child(2){
+  display: inline-flex;
+}
+.page-ref .current-page {
+  background-color: darkorange;
+  border-radius: 5px;
+  color: #fff;
+  padding: 5px 10px;
+  margin: 0 5px;
+}
+.page-ref button,
+.recipe-detail__btn button {
+  background-color: #fff;
+  border: solid 2px darkorange;
+  border-radius: 5px;
+  color: darkorange;
+  padding: 5px 10px;
+}
+.page-ref button:hover,
+.recipe-detail__btn button:hover {
+  background-color: darkorange;
+  border: solid 2px darkorange;
+  border-radius: 5px;
+  color: #fff;
+  padding: 5px 10px;
 }

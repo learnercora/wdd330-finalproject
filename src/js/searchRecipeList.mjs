@@ -1,4 +1,6 @@
-import { renderListWithTemplate } from "./utils.mjs";
+import { renderListWithTemplate, setLocalStorage } from "./utils.mjs";
+import PageRef from "./pageRef.mjs";
+import PageTotalData from "./pageTotalData.mjs";
 
 function recipeCardTemplate(recipe) {
   return `
@@ -19,8 +21,11 @@ export default class SearchRecipeList {
     this.listElement = listElement;
   }
   async init() {
-    const list = await this.dataSource.getData();
-    this.renderList(list);
+    const response = await this.dataSource.getData();
+    this.renderList(response.results);
+    setLocalStorage("total-data", response.totalResults);
+    const pageTotalData = new PageTotalData(response.totalResults);
+    pageTotalData.init();
   }
   renderList(list) {
     renderListWithTemplate(recipeCardTemplate, this.listElement, list, "afterbegin", true);

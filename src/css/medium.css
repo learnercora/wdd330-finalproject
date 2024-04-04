@@ -1,6 +1,13 @@
-@media screen and (min-width: 400px) {
+@media screen and (min-width: 500px) {
   .search-recipe-list,
   .collect-recipe-list {
+    display: grid;
     grid-template-columns: repeat(2, 1fr);
+  }
+  .list {
+    grid-column: 6/7;
+  }
+  .search-container input{
+    width: 25rem;
   }
 }

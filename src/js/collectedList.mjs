@@ -6,7 +6,6 @@ import {
 import ExternalApi from "./ExternalApi.mjs";
 
 function listItemTemplate(item) {
-  console.log(item)
   const newItem = `
   <li class="recipe-card">
     <img

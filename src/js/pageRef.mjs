@@ -8,8 +8,19 @@ export default class PageRef {
   }
   init() {
     setLocalStorage("page-offset", 0);
+    this.createRef();
     this.pageRefListener();
     this.displayCurrentPage();
+  }
+  createRef(){
+    const pageRefElement = document.querySelector(".page-ref");
+    pageRefElement.innerHTML = `
+    <div>Total Data:<span class="total-data"></span></div>
+    <div>
+      <button class="prev-page-btn"><</button>
+      <span class="current-page"></span>
+      <button class="next-page-btn">></button>
+    </div>`;
   }
 
   pageRefListener() {
@@ -41,5 +52,4 @@ export default class PageRef {
     this.currentPage < 1 ? 1 : this.currentPage;
     this.displayCurrentPage();
   }
-
 }

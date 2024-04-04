@@ -1,4 +1,4 @@
-@media screen and (min-width: 700px) {
+@media screen and (min-width: 900px) {
   .hero-text {
     height: 10rem;
   }
@@ -7,13 +7,17 @@
       url("/images/banner2.png");
   }
   .search-container input {
-    width: 40rem;
+    width: 35rem;
   }
   .recipe-detail {
     width: 80%;
   }
   .search-recipe-list,
   .collect-recipe-list {
+    display: grid;
     grid-template-columns: repeat(4, 1fr);
+  }
+  .list {
+    grid-column: 6/7;
   }
 }

@@ -32,7 +32,7 @@ export default class ExternalApi {
     );
     if (response.ok) {
       const data = await convertToJson(response);
-      return data.results;
+      return data;
     } else {
       const data = await convertToJson(response);
       alert(data.message || "There is somethings wrong from API...");

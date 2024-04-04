@@ -1,18 +1,17 @@
 import { getLocalStorage, setLocalStorage, updateListBadge } from "./utils.mjs";
-// import Carousel from "./carousel.mjs";
 
 function recipeContent(id, recipe) {
+  console.log(recipe.url)
   return `
     <section class="recipe-detail">
       <div class="recipe-detail__btn">
         <button id="back" onclick="history.back()">Back</button>
-        <a href=${recipe.url} download>
+        <a href=${recipe.url} download="image_of_id_${id}" class="download-btn">
           <button id="download" data-id="${id}">DownLoad</button>
         </a>
         <button id="addToList" data-id="${id}">Add to List</button>
       </div>
       <img
-        class="divider"
         src="${recipe.url}"
         alt="Recipe of id ${id}"
       />
