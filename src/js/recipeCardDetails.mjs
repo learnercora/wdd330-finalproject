@@ -8,7 +8,7 @@ function recipeContent(id, recipe) {
         <a href=${recipe.url} download="image_of_id_${id}" class="download-btn">
           <button id="download" data-id="${id}">DownLoad</button>
         </a>
-        <button id="addToList" data-id="${id}">Add to List</button>
+        <button id="addToList" data-id="${id}">Add to Pocket</button>
       </div>
       <img
         src="${recipe.url}"
